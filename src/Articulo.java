@@ -1,10 +1,29 @@
+import java.util.HashSet;
+
 public abstract class Articulo {
-    protected  String denominacion;
-    protected Double precioVenta;
+    private  String denominacion;
+    private Double precioVenta;
+    private UnidadMedida unidadMedida;
+    private HashSet<ImagenComida> imagenesArticulo;
+
+
 
     public Articulo(String denominacion, Double precioVenta) {
         this.denominacion = denominacion;
         this.precioVenta = precioVenta;
+    }
+
+    public void addImagenArticulo(ImagenComida imagenComida) {
+        if (imagenesArticulo == null) {
+            imagenesArticulo = new HashSet<>();
+        }
+        this.imagenesArticulo.add(imagenComida);
+    }
+
+    public void removeImagenArticulo(ImagenComida imagenComida) {
+        if (imagenesArticulo != null) {
+            this.imagenesArticulo.remove(imagenComida);
+        }
     }
 
     public String getDenominacion() {

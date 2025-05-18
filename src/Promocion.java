@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashSet;
 
 public class Promocion {
     private String denominacion;
@@ -10,16 +11,44 @@ public class Promocion {
     private String descripcionDescuento;
     private Double precioPromocional;
     private TipoPromocion tipoPromocion;
+    private HashSet<ImagenComida> imagenesPromo;
+    private HashSet<Articulo> articulos;
 
-    public Promocion(String denominacion, LocalDate fechaDesde, LocalDate fechaHasta, LocalTime horaDesde, LocalTime horaHasta, String descripcionDescuento, Double precioPromocional, TipoPromocion tipoPromocion) {
+    public Promocion(String denominacion, LocalDate fechaDesde, LocalDate fechaHasta, LocalTime horaHasta, LocalTime horaDesde, String descripcionDescuento, Double precioPromocional, TipoPromocion tipoPromocion) {
         this.denominacion = denominacion;
         this.fechaDesde = fechaDesde;
         this.fechaHasta = fechaHasta;
-        this.horaDesde = horaDesde;
         this.horaHasta = horaHasta;
+        this.horaDesde = horaDesde;
         this.descripcionDescuento = descripcionDescuento;
         this.precioPromocional = precioPromocional;
         this.tipoPromocion = tipoPromocion;
+    }
+
+    public void addArticulo(Articulo articulo) {
+        if (this.articulos == null) {
+            this.articulos = new HashSet<>();
+        }
+        this.articulos.add(articulo);
+    }
+
+    public void removeArticulo(Articulo articulo) {
+        if (this.articulos != null) {
+            this.articulos.remove(articulo);
+        }
+    }
+
+    public void addImagenesPromo(ImagenComida imagenComida) {
+        if (this.imagenesPromo == null) {
+            this.imagenesPromo = new HashSet<>();
+        }
+        this.imagenesPromo.add(imagenComida);
+    }
+
+    public void removeImagenesPromo(ImagenComida imagenComida) {
+        if (this.imagenesPromo != null) {
+            this.imagenesPromo.remove(imagenComida);
+        }
     }
 
     public String getDenominacion() {
@@ -85,4 +114,5 @@ public class Promocion {
     public void setTipoPromocion(TipoPromocion tipoPromocion) {
         this.tipoPromocion = tipoPromocion;
     }
+
 }
