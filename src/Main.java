@@ -44,7 +44,8 @@ public class Main {
         ArticuloInsumo insumo6 = new ArticuloInsumo("Tomate",500.00,400.00,10,100,false);
         ArticuloInsumo insumo7 = new ArticuloInsumo("Lechuga",1000.00,800.00,10,100,false);
         ArticuloInsumo insumo8 = new ArticuloInsumo("Huevo",500.00,400.00,10,100,false);
-
+        //Coca Cola 500ml
+        ArticuloInsumo insumo9 = new ArticuloInsumo("CocaCola 500ml",1500.00,1000.00,10,100,false);
 
     //Articulo manufacturado
         //Pancho
@@ -86,13 +87,15 @@ public class Main {
             ImagenComida imgComida = new ImagenComida("www.imgPanchoComida.com");
             ImagenComida imgComida2 = new ImagenComida("www.imgPanchoConPonchoComida.com");
 
-            Promocion promocion1 = new Promocion("Promo panchos",desde,hasta,horaInicial,horaFinal,"Dos X Unos",3000.00,TipoPromocion.PROMOCION1);
+            Promocion promocion1 = new Promocion("Promo 2 panchos + coca 500ml",desde,hasta,horaInicial,horaFinal,"2 panchos simples - 1 Coca 500ml",5000.00,TipoPromocion.PROMOCION1);
 
             promocion1.addImagenesPromo(imgComida);
             promocion1.addImagenesPromo(imgComida2);
             // Articulo Promocion
             ArticuloPromocion articuloPromo = new ArticuloPromocion(articulo1,2);
+            ArticuloPromocion articuloPromo2 = new ArticuloPromocion(articulo2,1);
             promocion1.addArticulo(articuloPromo);
+            promocion1.addArticulo(articuloPromo2);
 
     }
 }
