@@ -12,7 +12,7 @@ public class Promocion {
     private Double precioPromocional;
     private TipoPromocion tipoPromocion;
     private HashSet<ImagenComida> imagenesPromo;
-    private HashSet<Articulo> articulos;
+    private HashSet<ArticuloPromocion> articulos;
 
     public Promocion(String denominacion, LocalDate fechaDesde, LocalDate fechaHasta, LocalTime horaHasta, LocalTime horaDesde, String descripcionDescuento, Double precioPromocional, TipoPromocion tipoPromocion) {
         this.denominacion = denominacion;
@@ -25,16 +25,18 @@ public class Promocion {
         this.tipoPromocion = tipoPromocion;
     }
 
-    public void addArticulo(Articulo articulo) {
+    public void addArticulo(ArticuloPromocion articuloPromocion) {
         if (this.articulos == null) {
             this.articulos = new HashSet<>();
         }
-        this.articulos.add(articulo);
+        this.articulos.add(articuloPromocion);
+        articuloPromocion.setPromocion(this);
     }
 
-    public void removeArticulo(Articulo articulo) {
+    public void removeArticulo(ArticuloPromocion articuloPromocion) {
         if (this.articulos != null) {
-            this.articulos.remove(articulo);
+            this.articulos.remove(articuloPromocion);
+            articuloPromocion.setPromocion(null);
         }
     }
 

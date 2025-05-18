@@ -78,19 +78,21 @@ public class Main {
 
 
     //Promoción
-        LocalDate desde = LocalDate.of(2025, 5, 18);
-        LocalDate hasta = desde.plusDays(10);
-        LocalTime horaInicial = LocalTime.of(11, 30);
-        LocalTime horaFinal = LocalTime.of(12, 30);
-        ImagenComida imgComida = new ImagenComida("www.imgPanchoComida.com");
-        ImagenComida imgComida2 = new ImagenComida("www.imgPanchoConPonchoComida.com");
+        //Promo panchos
+            LocalDate desde = LocalDate.of(2025, 5, 18);
+            LocalDate hasta = desde.plusDays(10);
+            LocalTime horaInicial = LocalTime.of(11, 30);
+            LocalTime horaFinal = LocalTime.of(12, 30);
+            ImagenComida imgComida = new ImagenComida("www.imgPanchoComida.com");
+            ImagenComida imgComida2 = new ImagenComida("www.imgPanchoConPonchoComida.com");
 
-        Promocion promocion1 = new Promocion("Promo panchos",desde,hasta,horaInicial,horaFinal,"Dos X Unos",3000.00,TipoPromocion.PROMOCION1);
+            Promocion promocion1 = new Promocion("Promo panchos",desde,hasta,horaInicial,horaFinal,"Dos X Unos",3000.00,TipoPromocion.PROMOCION1);
 
-        promocion1.addImagenesPromo(imgComida);
-        promocion1.addImagenesPromo(imgComida2);
-
-        promocion1.addArticulo(articulo1);
+            promocion1.addImagenesPromo(imgComida);
+            promocion1.addImagenesPromo(imgComida2);
+            // Articulo Promocion
+            ArticuloPromocion articuloPromo = new ArticuloPromocion(articulo1,2);
+            promocion1.addArticulo(articuloPromo);
 
     }
 }
