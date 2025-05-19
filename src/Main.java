@@ -17,6 +17,8 @@ public class Main {
         LocalTime horarioCierre = LocalTime.of(21,30);
         Sucursal sucursal = new Sucursal("Sucursal-1",horarioApertura,horarioCierre,domicilio);
 
+        empresa.addSucursal(sucursal);
+
     //Categorias Padres
         Categoria padre = new Categoria("Panchos");
         Categoria padre2 = new Categoria("Hamburguesas");
@@ -33,23 +35,28 @@ public class Main {
         padre2.addSubcategoria(subCategoria3);
         padre2.addSubcategoria(subCategoria4);
 
+    // Unidad de Medida
+        UnidadMedida unidades = new UnidadMedida("unidades");
+        UnidadMedida gramos = new UnidadMedida("gramos");
+        UnidadMedida mililitros = new UnidadMedida("mililitros");
+
     //Articulo Insumo
         //Insumo Pancho
-        ArticuloInsumo insumo1 = new ArticuloInsumo("Pan Bimbo Pancho",1000.00,800.00,10,100,false);
-        ArticuloInsumo insumo2 = new ArticuloInsumo("Salchica Fate",500.00,400.00,10,100,false);
-        ArticuloInsumo insumo3 = new ArticuloInsumo("Lluvia de papas",100.00,50.00,10,100,false);
+        ArticuloInsumo insumo1 = new ArticuloInsumo("Pan Bimbo Pancho",1000.00, unidades, 800.00, 10, 100, false);
+        ArticuloInsumo insumo2 = new ArticuloInsumo("Salchica Fate",500.00, unidades, 400.00, 10, 100, false);
+        ArticuloInsumo insumo3 = new ArticuloInsumo("Lluvia de papas",100.00, gramos, 50.00, 10, 100, false);
         //Insumo Hamburguesa
-        ArticuloInsumo insumo4 = new ArticuloInsumo("Pan Bimbo Hamburguesa",500.00,400.00,10,100,false);
-        ArticuloInsumo insumo5 = new ArticuloInsumo("Hamburguesa Paty",1000.00,800.00,10,100,false);
-        ArticuloInsumo insumo6 = new ArticuloInsumo("Tomate",500.00,400.00,10,100,false);
-        ArticuloInsumo insumo7 = new ArticuloInsumo("Lechuga",1000.00,800.00,10,100,false);
-        ArticuloInsumo insumo8 = new ArticuloInsumo("Huevo",500.00,400.00,10,100,false);
+        ArticuloInsumo insumo4 = new ArticuloInsumo("Pan Bimbo Hamburguesa",500.00, unidades, 400.00, 10, 100, false);
+        ArticuloInsumo insumo5 = new ArticuloInsumo("Hamburguesa Paty",1000.00, unidades, 800.00, 10, 100, false);
+        ArticuloInsumo insumo6 = new ArticuloInsumo("Tomate",500.00, gramos, 400.00, 10, 100, false);
+        ArticuloInsumo insumo7 = new ArticuloInsumo("Lechuga",1000.00, gramos, 800.00, 10, 100, false);
+        ArticuloInsumo insumo8 = new ArticuloInsumo("Huevo",500.00, gramos, 400.00, 10, 100, false);
         //Coca Cola 500ml
-        ArticuloInsumo insumo9 = new ArticuloInsumo("CocaCola 500ml",1500.00,1000.00,10,100,false);
+        ArticuloInsumo insumo9 = new ArticuloInsumo("CocaCola 500ml",1500.00, mililitros, 1000.00, 10, 100, false);
 
     //Articulo manufacturado
         //Pancho
-        ArticuloManufacturado articulo1 = new ArticuloManufacturado("Pancho",2000.00,"Tipo simple",10,"Receta panchito");
+        ArticuloManufacturado articulo1 = new ArticuloManufacturado("Pancho",2000.00, unidades,"Tipo simple",10,"Receta panchito");
 
         ArticuloManufacturadoDetalle detalle1 = new ArticuloManufacturadoDetalle(1,insumo1);
         ArticuloManufacturadoDetalle detalle2 = new ArticuloManufacturadoDetalle(1,insumo2);
@@ -61,7 +68,7 @@ public class Main {
 
         subCategoria.addArticulo(articulo1);
         //Hamburguesa
-        ArticuloManufacturado articulo2 = new ArticuloManufacturado("Hamburguesa",10000.00,"Tipo simple",10,"Receta Hamburguesa");
+        ArticuloManufacturado articulo2 = new ArticuloManufacturado("Hamburguesa",10000.00, unidades,"Tipo simple",10,"Receta Hamburguesa");
 
         ArticuloManufacturadoDetalle detalle4 = new ArticuloManufacturadoDetalle(1,insumo1);
         ArticuloManufacturadoDetalle detalle5 = new ArticuloManufacturadoDetalle(1,insumo2);

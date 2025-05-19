@@ -1,9 +1,11 @@
 public class DetallePedido {
     private Integer cantidad;
+    private Articulo articulo;
     private Double subTotal;
 
-    public DetallePedido(Integer cantidad, Double subTotal) {
+    public DetallePedido(Integer cantidad, Articulo articulo, Double subTotal) {
         this.cantidad = cantidad;
+        this.articulo = articulo;
         this.subTotal = subTotal;
     }
 
@@ -21,5 +23,13 @@ public class DetallePedido {
 
     public void setSubTotal(Double subTotal) {
         this.subTotal = subTotal;
+    }
+
+    public Articulo getArticulo() {
+        return articulo;
+    }
+
+    public void setArticulo(Articulo articulo) {
+        this.articulo = articulo;
     }
 }

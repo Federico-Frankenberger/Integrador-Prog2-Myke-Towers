@@ -13,7 +13,7 @@ public class Empresa {
         this.cuil = cuil;
     }
 
-    public void addSucursar(Sucursal sucu){
+    public void addSucursal(Sucursal sucu){
         if(this.sucursales == null) {
             this.sucursales = new HashSet<>();
         }

@@ -1,12 +1,12 @@
 public class ArticuloPromocion {
     private Promocion promocion;
     private Articulo articulo;
-    private int Cantidad;
+    private int cantidad;
 
-    public ArticuloPromocion( Articulo articulo, int cantidad) {
+    public ArticuloPromocion(Articulo articulo, int cantidad) {
         this.promocion = null;
         this.articulo = articulo;
-        Cantidad = cantidad;
+        this.cantidad = cantidad;
     }
 
     public Promocion getPromocion() {
@@ -26,10 +26,10 @@ public class ArticuloPromocion {
     }
 
     public int getCantidad() {
-        return Cantidad;
+        return cantidad;
     }
 
     public void setCantidad(int cantidad) {
-        Cantidad = cantidad;
+        this.cantidad = cantidad;
     }
 }

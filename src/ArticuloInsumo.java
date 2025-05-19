@@ -4,8 +4,8 @@ public class ArticuloInsumo extends Articulo {
     private Integer stockMaximo;
     private Boolean esParaElaborar;
 
-    public ArticuloInsumo(String denominacion, Double precioVenta, Double precioCompra, Integer stockAtcual, Integer stockMaximo, Boolean esParaElaborar) {
-        super(denominacion, precioVenta);
+    public ArticuloInsumo(String denominacion, Double precioVenta, UnidadMedida unidadMedida, Double precioCompra, Integer stockAtcual, Integer stockMaximo, Boolean esParaElaborar) {
+        super(denominacion, precioVenta, unidadMedida);
         this.precioCompra = precioCompra;
         this.stockAtcual = stockAtcual;
         this.stockMaximo = stockMaximo;

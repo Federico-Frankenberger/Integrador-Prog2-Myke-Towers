@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashSet;
 
 public class Pedido {
     private LocalTime horaEstimadaFinalizacion;
@@ -9,6 +10,10 @@ public class Pedido {
     private TipoEnvio tipoEnvio;
     private FormaPago formaPago;
     private LocalDate fechaPedido;
+    private Factura factura;
+    private Sucursal sucursal;
+    private Domicilio domicilio;
+    private HashSet<DetallePedido> detallesPedido;
 
     public Pedido(LocalTime horaEstimadaFinalizacion, Double total, Double totalCosto, Estado estado, TipoEnvio tipoEnvio, FormaPago formaPago, LocalDate fechaPedido) {
         this.horaEstimadaFinalizacion = horaEstimadaFinalizacion;
@@ -18,6 +23,19 @@ public class Pedido {
         this.tipoEnvio = tipoEnvio;
         this.formaPago = formaPago;
         this.fechaPedido = fechaPedido;
+    }
+
+    public void addDetallePedido(DetallePedido detallePedido) {
+        if (detallesPedido == null) {
+            detallesPedido = new HashSet<>();
+        }
+        this.detallesPedido.add(detallePedido);
+    }
+
+    public void removeDetallePedido(DetallePedido detallePedido) {
+        if (detallesPedido != null) {
+            this.detallesPedido.remove(detallePedido);
+        }
     }
 
     public LocalTime getHoraEstimadaFinalizacion() {
@@ -74,5 +92,29 @@ public class Pedido {
 
     public void setFechaPedido(LocalDate fechaPedido) {
         this.fechaPedido = fechaPedido;
+    }
+
+    public Factura getFactura() {
+        return factura;
+    }
+
+    public void setFactura(Factura factura) {
+        this.factura = factura;
+    }
+
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
+    }
+
+    public Domicilio getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
     }
 }

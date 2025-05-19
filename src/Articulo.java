@@ -1,14 +1,12 @@
 import java.util.HashSet;
 
 public abstract class Articulo {
-    private  String denominacion;
+    private String denominacion;
     private Double precioVenta;
     private UnidadMedida unidadMedida;
     private HashSet<ImagenComida> imagenesArticulo;
 
-
-
-    public Articulo(String denominacion, Double precioVenta) {
+    public Articulo(String denominacion, Double precioVenta, UnidadMedida unidadMedida) {
         this.denominacion = denominacion;
         this.precioVenta = precioVenta;
     }
@@ -40,5 +38,13 @@ public abstract class Articulo {
 
     public void setPrecioVenta(Double precioVenta) {
         this.precioVenta = precioVenta;
+    }
+
+    public UnidadMedida getUnidadMedida() {
+        return unidadMedida;
+    }
+
+    public void setUnidadMedida(UnidadMedida unidadMedida) {
+        this.unidadMedida = unidadMedida;
     }
 }

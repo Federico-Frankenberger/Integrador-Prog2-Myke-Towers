@@ -4,25 +4,25 @@ public class ArticuloManufacturado extends Articulo {
     private String descripcion;
     private Integer tiempoEstimadoMinutos;
     private String preparacion;
-    private HashSet<ArticuloManufacturadoDetalle> Insumos;
+    private HashSet<ArticuloManufacturadoDetalle> insumos;
 
-    public ArticuloManufacturado(String denominacion, Double precioVenta, String descripcion, Integer tiempoEstimadoMinutos, String preparacion) {
-        super(denominacion, precioVenta);
+    public ArticuloManufacturado(String denominacion, Double precioVenta, UnidadMedida unidadMedida, String descripcion, Integer tiempoEstimadoMinutos, String preparacion) {
+        super(denominacion, precioVenta, unidadMedida);
         this.descripcion = descripcion;
         this.tiempoEstimadoMinutos = tiempoEstimadoMinutos;
         this.preparacion = preparacion;
     }
 
     public void addInsumo(ArticuloManufacturadoDetalle articuloInsumo) {
-        if (Insumos == null) {
-            Insumos = new HashSet<>();
+        if (insumos == null) {
+            insumos = new HashSet<>();
         }
-        Insumos.add(articuloInsumo);
+        insumos.add(articuloInsumo);
     }
 
     public void removeInsumo(ArticuloManufacturadoDetalle articuloInsumo) {
-        if (Insumos != null) {
-            Insumos.remove(articuloInsumo);
+        if (insumos != null) {
+            insumos.remove(articuloInsumo);
         }
     }
 
