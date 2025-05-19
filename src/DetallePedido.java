@@ -3,10 +3,23 @@ public class DetallePedido {
     private Articulo articulo;
     private Double subTotal;
 
+    public DetallePedido(Integer cantidad, Articulo articulo) {
+        this.cantidad = cantidad;
+        this.articulo = articulo;
+    }
+
     public DetallePedido(Integer cantidad, Articulo articulo, Double subTotal) {
         this.cantidad = cantidad;
         this.articulo = articulo;
         this.subTotal = subTotal;
+    }
+
+    public Double calcularSubTotal() {
+        Double total = 0.0;
+        if (cantidad != null && articulo != null && articulo.getPrecioVenta() != null) {
+            total = cantidad * articulo.getPrecioVenta();
+        }
+        return total;
     }
 
     public Integer getCantidad() {

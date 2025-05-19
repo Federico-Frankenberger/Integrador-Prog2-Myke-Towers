@@ -15,6 +15,15 @@ public class Pedido {
     private Domicilio domicilio;
     private HashSet<DetallePedido> detallesPedido;
 
+    public Pedido(Estado estado, TipoEnvio tipoEnvio, FormaPago formaPago, LocalDate fechaPedido, Sucursal sucursal, Domicilio domicilio) {
+        this.estado = estado;
+        this.tipoEnvio = tipoEnvio;
+        this.formaPago = formaPago;
+        this.fechaPedido = fechaPedido;
+        this.sucursal = sucursal;
+        this.domicilio = domicilio;
+    }
+
     public Pedido(LocalTime horaEstimadaFinalizacion, Double total, Double totalCosto, Estado estado, TipoEnvio tipoEnvio, FormaPago formaPago, LocalDate fechaPedido) {
         this.horaEstimadaFinalizacion = horaEstimadaFinalizacion;
         this.total = total;
@@ -36,6 +45,18 @@ public class Pedido {
         if (detallesPedido != null) {
             this.detallesPedido.remove(detallePedido);
         }
+    }
+
+    public Double calcularTotal() {
+        Double total = 0.0;
+        if (detallesPedido != null) {
+            for (DetallePedido detallePedido : detallesPedido) {
+                if (detallePedido.getSubTotal() != null) {
+                    total += detallePedido.getSubTotal();
+                }
+            }
+        }
+        return total;
     }
 
     public LocalTime getHoraEstimadaFinalizacion() {

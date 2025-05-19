@@ -9,6 +9,8 @@ public class Factura {
     private FormaPago formaPago;
     private Double totalVenta;
 
+
+
     public Factura(LocalDate fechaFacturacion, Integer mpPaymentId, Integer mpMerchantOrderId, String mpPreferenceId, String mpPaymentType, FormaPago formaPago, Double totalVenta) {
         this.fechaFacturacion = fechaFacturacion;
         this.mpPaymentId = mpPaymentId;

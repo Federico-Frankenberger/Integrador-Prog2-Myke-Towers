@@ -104,5 +104,28 @@ public class Main {
             promocion1.addArticulo(articuloPromo);
             promocion1.addArticulo(articuloPromo2);
 
+    //Pedido
+            DetallePedido detallePedido1 = new DetallePedido(2, articulo1);
+            detallePedido1.setSubTotal(detallePedido1.calcularSubTotal());
+            DetallePedido detallePedido2 = new DetallePedido(1, articulo2);
+            detallePedido2.setSubTotal(detallePedido2.calcularSubTotal());
+
+            LocalTime horafin1 = LocalTime.of(15, 30);
+            LocalDate fechapedido1 = LocalDate.of(2025, 5, 18);
+            Pedido pedido1 = new Pedido(Estado.PENDIENTE, TipoEnvio.TAKEAWAY, FormaPago.MERCADOPAGO, fechapedido1, sucursal, domicilio);
+
+            pedido1.addDetallePedido(detallePedido1);
+            pedido1.addDetallePedido(detallePedido2);
+
+            pedido1.setTotal(pedido1.calcularTotal());
+
+            pedido1.setHoraEstimadaFinalizacion(horafin1);
+
+            Factura factura1 = new Factura(pedido1.getFechaPedido(),1,1,"xxxx", "xx", pedido1.getFormaPago(), pedido1.getTotal());
+
+            pedido1.setFactura(factura1);
+
+
+
     }
 }
