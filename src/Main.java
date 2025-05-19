@@ -7,10 +7,10 @@ public class Main {
         Empresa empresa  = new Empresa("Todo Rico","TodoRico s.r.l",33270072);
 
     //Domicilio
-        Pais pais = new Pais("Argentina");
-        Provincia provincia = new Provincia("Mendoza",pais);
-        Localidad localidad = new Localidad("Godoy Cruz",provincia);
-        Domicilio domicilio = new Domicilio("Güemes",243,5501,localidad);
+        Pais Argentina = new Pais("Argentina");
+        Provincia provincia = new Provincia("Mendoza",Argentina);
+        Localidad GodoyCruz = new Localidad("Godoy Cruz",provincia);
+        Domicilio domicilio = new Domicilio("Güemes",243,5501,GodoyCruz);
 
     //Sucursal
         LocalTime horarioApertura = LocalTime.of(8,30);
@@ -124,6 +124,26 @@ public class Main {
             Factura factura1 = new Factura(pedido1.getFechaPedido(),1,1,"xxxx", "xx", pedido1.getFormaPago(), pedido1.getTotal());
 
             pedido1.setFactura(factura1);
+
+
+        //Usuario
+            Usuario usuarioCliente = new Usuario("1", "usuario1");
+
+
+        //Imagen
+            ImagenPersona imagenPersona1= new ImagenPersona("www.imgPersona1.com");
+
+        //Domicilio Persona
+            Provincia Mendoza = new Provincia("Mendoza", Argentina);
+            Localidad CiudadDeMendoza = new Localidad("Ciudad de Mendoza", Mendoza);
+            Domicilio domicilio1 = new Domicilio("Calle1", 123, 5500, CiudadDeMendoza);
+
+        //Cliente
+            Cliente cliente1 = new Cliente("Pepito", "Programa", "261895326", "pepitoprograma@gmial.com", LocalDate.of(2000,06,03), domicilio1, usuarioCliente, imagenPersona1);
+
+
+            cliente1.addPedido(pedido1);
+
 
 
 
